@@ -60,3 +60,10 @@ header {
     width: 100%;
     transition: width 200ms ease-in-out;
 }
+
+.card {
+    background-color: white;
+    width: 800px;
+    height: 400px;
+    margin: 45px auto;
+}
