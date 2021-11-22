@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="shortcut icon" href="/pics/favicon.ico" type="image/x-icon">
+        
+        {% block head %}
+            <title>Gym Manager</title>
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/">Instructors</a>
+                <a href="/portfolio">Members</a>
+            </div>
+        </header>
+        {% block content %}{% endblock %}
+        
+    </body>
+</html>
