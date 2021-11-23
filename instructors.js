@@ -1,3 +1,4 @@
+const fs = require('fs')
 // create
 exports.post = function(req, res) {
     const keys = Object.keys(req.body)
@@ -7,5 +8,12 @@ exports.post = function(req, res) {
             return res.send('please, fill')
         }
     }
-    return res.send(req.body)
+
+    fs.writeFile("data.json", JSON.stringify(req.body), function(err) {
+        if (err) return res.send("write file")
+
+        return res.redirect("/instructors")
+    })
+
+    //return res.send(req.body)
 }
