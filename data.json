@@ -15,7 +15,7 @@
       "name": "bia nensso",
       "birth": 1637280000000,
       "gender": "M",
-      "services": "beach tennis",
+      "services": "beach tennis, cross bike",
       "created_at": 1637696404451
     },
     {
@@ -26,6 +26,15 @@
       "gender": "M",
       "services": "musculação, beach tennis, maromba",
       "created_at": 1637696421943
+    },
+    {
+      "id": 4,
+      "avatar_url": "http://gugu.com",
+      "name": "bia nensso",
+      "birth": 989798400000,
+      "gender": "F",
+      "services": "musculação, beach tennis, crossfit, cross bike",
+      "created_at": 1638390179229
     }
   ]
 }

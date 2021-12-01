@@ -11,7 +11,15 @@ exports.show = function(req, res) {
 
     if (!foundInstructor) return res.send("instructor is not founded!")
 
-    return res.render("instructors/show", {instructor: foundInstructor})
+    const instructor = {
+        ...foundInstructor,
+        age: "",
+        gender: "",
+        services: foundInstructor.services.split(","),
+        created_at: ""
+    }
+
+    return res.render("instructors/show", {instructor})
 }
 
 // create
