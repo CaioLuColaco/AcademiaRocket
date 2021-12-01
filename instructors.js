@@ -11,7 +11,7 @@ exports.show = function(req, res) {
 
     if (!foundInstructor) return res.send("instructor is not founded!")
 
-    return res.send(foundInstructor)
+    return res.render("instructors/show", {instructor: foundInstructor})
 }
 
 // create
