@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="card">
+<div class="card table-container">
     <section class="avatar" style="background: url(https://source.unsplash.com/collection/3465564/500x500) no-repeat center center / cover"></section>
     
     <section class="details">
@@ -16,7 +16,7 @@
 
         </form>
 
-        <form id="form-delete" action="/instructors?_metod=DELETE" method="post">
+        <form id="form-delete" action="/instructors?_method=DELETE" method="post">
             <input type="hidden" name="id" value={{instructor.id}}>
             <button type="submit">Deletar</button>
         </form>

@@ -2,6 +2,10 @@ const fs = require('fs')
 const data = require('./data.json')
 const { age, date } = require("./utils")
 
+exports.index = function(re, res) {
+    return res.render("instructors/index", { instructors: data.instructors})
+}
+
 // show
 exports.show = function(req, res) {
     const  { id } = req.params
@@ -104,4 +108,28 @@ exports.put = function(req, res) {
         return res.redirect(`/instructors/${id}`)
     })
 
+}
+
+// delete
+exports.delete = function(req, res) {
+    const { id } = req.body
+
+    const filteredInstructors = data.instructors.filter(function(instructor) {
+        return id != instructor.id
+    })
+
+    // Reorganized the order of instructor's id
+    let cont = 1
+    for(instru of filteredInstructors) {
+        instru.id = cont
+        cont = cont + 1
+    }
+
+    data.instructors = filteredInstructors
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if(err) return res.send("write error!")
+
+        return res.redirect("/instructors")
+    })
 }
