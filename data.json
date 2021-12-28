@@ -1,5 +1,17 @@
 {
-  "members": [],
+  "members": [
+    {
+      "id": 1,
+      "avatar_url": "https://play-lh.googleusercontent.com/z6aS2wnyp16KA9CFEep7HvZd2DmwRfoR9NWm9oHWRw-tuXLE_CPbnb1OL39-a456EgA=s180-rw",
+      "name": "mario",
+      "email": "mario@luigi.com.br",
+      "birth": 391824000000,
+      "gender": "M",
+      "blood": "B+",
+      "weight": "38",
+      "height": "130"
+    }
+  ],
   "instructors": [
     {
       "id": 1,
@@ -36,6 +48,15 @@
       "gender": "M",
       "services": "atletismo, corrida, salto",
       "created_at": 1639676500678
+    },
+    {
+      "id": 5,
+      "avatar_url": "https://www.rbsdirect.com.br/imagesrc/25445226.jpg?w=1200&h=630&a=c&version=1575255600",
+      "name": "ticole",
+      "birth": 1095811200000,
+      "gender": "M",
+      "services": "ticole, é muito bom, to querendo",
+      "created_at": 1640687827433
     }
   ]
 }
