@@ -4,7 +4,6 @@ const res = require("express/lib/response")
 
 module.exports = {
     all(callback) {
-
         db.query(`
         SELECT instructors.*, count(members) AS total_students
         FROM instructors
@@ -50,6 +49,20 @@ module.exports = {
         db.query(`SELECT * FROM instructors WHERE id = $1`, [id], function(err, results) {
             if(err) throw `Database error! ${err}`
             callback(results.rows[0])
+        })
+    },
+
+    findBy(filter, callback) {
+        db.query(`
+        SELECT instructors.*, count(members) AS total_students
+        FROM instructors
+        LEFT JOIN members ON (members.instructor_id = instructors.id)
+        WHERE instructors.name ILIKE '%${filter}%'
+        GROUP BY instructors.id
+        ORDER BY total_students DESC`, function(err, results) {
+            if(err) throw `Database error! ${err}`
+
+            callback(results.rows)
         })
     },
 
